@@ -31,7 +31,7 @@ global:
 activiti-cloud-full-example:
   application:
     runtime-bundle:
-      enabled: true
+      enabled: false
       image:
         pullPolicy: Always
 
