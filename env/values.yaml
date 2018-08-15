@@ -28,6 +28,10 @@ global:
   keycloak:
     url: "http://activiti-keycloak.35.240.32.75.nip.io/auth"
 
+application:
+  runtime-bundle:
+    enabled: false
+
 activiti-cloud-full-example:
   application:
     runtime-bundle:
