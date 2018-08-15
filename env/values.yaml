@@ -32,8 +32,6 @@ activiti-cloud-full-example:
   application:
     runtime-bundle:
       enabled: false
-      image:
-        pullPolicy: Always
 
     activiti-cloud-query:
       image:
