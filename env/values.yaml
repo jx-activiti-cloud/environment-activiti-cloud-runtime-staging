@@ -28,6 +28,31 @@ global:
   keycloak:
     url: "http://activiti-keycloak.35.240.32.75.nip.io/auth"
 
+example-runtime-bundle:
+  image:
+    pullPolicy: Always
+  extraEnv: |
+    - name: ACTIVITI_SECURITY_POLICIES_0_NAME
+      value: "HR Group restricted to SimpleProcess and ConnectorProcess"
+    - name: ACTIVITI_SECURITY_POLICIES_0_GROUPS
+      value: "hr"
+    - name: ACTIVITI_SECURITY_POLICIES_0_ACCESS
+      value: "WRITE"
+    - name: ACTIVITI_SECURITY_POLICIES_0_SERVICENAME
+      value: "rb-my-app"
+    - name: ACTIVITI_SECURITY_POLICIES_0_KEYS
+      value: "SimpleProcess,ConnectorProcess,fixSystemFailure"
+    - name: ACTIVITI_SECURITY_POLICIES_1_NAME
+      value: "testgroup not restricted at all"
+    - name: ACTIVITI_SECURITY_POLICIES_1_GROUPS
+      value: "testgroup"
+    - name: ACTIVITI_SECURITY_POLICIES_1_ACCESS
+      value: "WRITE"
+    - name: ACTIVITI_SECURITY_POLICIES_1_SERVICENAME
+      value: "rb-my-app"
+    - name: ACTIVITI_SECURITY_POLICIES_1_KEYS
+      value: "*"
+
 application:
   runtime-bundle:
     enabled: false
@@ -41,6 +66,27 @@ activiti-cloud-full-example:
       image:
         tag: latest
         pullPolicy: Always
+      extraEnv: |
+        - name: ACTIVITI_SECURITY_POLICIES_0_NAME
+          value: "HR Group restricted to SimpleProcess and ConnectorProcess"
+        - name: ACTIVITI_SECURITY_POLICIES_0_GROUPS
+          value: "hr"
+        - name: ACTIVITI_SECURITY_POLICIES_0_ACCESS
+          value: "WRITE"
+        - name: ACTIVITI_SECURITY_POLICIES_0_SERVICENAME
+          value: "rb-my-app"
+        - name: ACTIVITI_SECURITY_POLICIES_0_KEYS
+          value: "SimpleProcess,ConnectorProcess,fixSystemFailure"
+        - name: ACTIVITI_SECURITY_POLICIES_1_NAME
+          value: "testgroup not restricted at all"
+        - name: ACTIVITI_SECURITY_POLICIES_1_GROUPS
+          value: "testgroup"
+        - name: ACTIVITI_SECURITY_POLICIES_1_ACCESS
+          value: "WRITE"
+        - name: ACTIVITI_SECURITY_POLICIES_1_SERVICENAME
+          value: "rb-my-app"
+        - name: ACTIVITI_SECURITY_POLICIES_1_KEYS
+          value: "*"
 
     activiti-cloud-connector:
       enabled: true
@@ -52,6 +98,27 @@ activiti-cloud-full-example:
       image:
         tag: latest
         pullPolicy: Always
+      extraEnv: |
+        - name: ACTIVITI_SECURITY_POLICIES_0_NAME
+          value: "HR Group restricted to SimpleProcess and ConnectorProcess"
+        - name: ACTIVITI_SECURITY_POLICIES_0_GROUPS
+          value: "hr"
+        - name: ACTIVITI_SECURITY_POLICIES_0_ACCESS
+          value: "WRITE"
+        - name: ACTIVITI_SECURITY_POLICIES_0_SERVICENAME
+          value: "rb-my-app"
+        - name: ACTIVITI_SECURITY_POLICIES_0_KEYS
+          value: "SimpleProcess,ConnectorProcess,fixSystemFailure"
+        - name: ACTIVITI_SECURITY_POLICIES_1_NAME
+          value: "testgroup not restricted at all"
+        - name: ACTIVITI_SECURITY_POLICIES_1_GROUPS
+          value: "testgroup"
+        - name: ACTIVITI_SECURITY_POLICIES_1_ACCESS
+          value: "WRITE"
+        - name: ACTIVITI_SECURITY_POLICIES_1_SERVICENAME
+          value: "rb-my-app"
+        - name: ACTIVITI_SECURITY_POLICIES_1_KEYS
+          value: "*"
 
   infrastructure:
     activiti-keycloak:
