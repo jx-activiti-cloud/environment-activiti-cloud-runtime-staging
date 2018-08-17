@@ -39,15 +39,18 @@ activiti-cloud-full-example:
 
     activiti-cloud-query:
       image:
+        tag: latest
         pullPolicy: Always
 
     activiti-cloud-connector:
       enabled: true
       image:
+        tag: latest
         pullPolicy: Always
 
     activiti-cloud-audit:
       image:
+        tag: latest
         pullPolicy: Always
 
   infrastructure:
